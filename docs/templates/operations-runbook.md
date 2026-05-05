@@ -1,5 +1,9 @@
 # AI運用Runbookテンプレート
 
+前提テンプレート: safety-policy.md
+後続テンプレート: change-log.md
+
+
 ## 1. 対象
 - 対象システム/機能:
 - 担当チーム:

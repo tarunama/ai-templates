@@ -1,5 +1,9 @@
 # 評価ケーステンプレート
 
+前提テンプレート: model-decision-record.md
+後続テンプレート: safety-policy.md
+
+
 ## 1. 評価概要
 - 対象機能:
 - 評価日:

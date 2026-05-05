@@ -2,6 +2,7 @@
 
 ## 運用メモ
 - Pull Request のタイトルと説明は日本語で記載してください（`.github/pull_request_template.md` を使用）。
+- AI変更時は `docs/templates/ai-pr-template.md` を利用してください。
 - Issue テンプレートは `.github/ISSUE_TEMPLATE/` に配置しています。
 
 ## AIドキュメントテンプレート

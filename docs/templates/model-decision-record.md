@@ -1,5 +1,9 @@
 # モデル選定記録テンプレート（Model Decision Record）
 
+前提テンプレート: prompt-spec.md
+後続テンプレート: eval-cases.md
+
+
 ## 1. 基本情報
 - 記録ID:
 - 作成日:

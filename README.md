@@ -23,6 +23,11 @@
 - 変更時は必ず `docs/templates/change-log.md` を更新してください。
 - Issue テンプレートは `.github/ISSUE_TEMPLATE/` に配置しています。
 
+## Codexでの利用
+- Codex はリポジトリ直下の `AGENTS.md` をプロジェクト指示ファイルとして参照します。
+- このリポジトリは Markdown テンプレート中心のため、変更時はリンク先・見出し・表記ゆれなどの軽量な静的確認を実施してください。
+- 振る舞いや使い方が変わる場合は `README.md` と `docs/templates/change-log.md` を更新してください。
+
 ## AIドキュメントテンプレート
 - 利用順ガイド: `docs/templates/README.md`
 - Prompt 要件定義: `docs/templates/prompt-spec.md`

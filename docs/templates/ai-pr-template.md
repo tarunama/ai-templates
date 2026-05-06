@@ -23,8 +23,9 @@
 - 互換性への影響:
 
 ## 評価結果
+- 実行コマンド: `python3 scripts/run-eval.py --eval-file <評価ケースMarkdown>`
 - 実施した評価:
-- 主な指標結果:
+- 主な指標結果（コマンド出力を貼り付け）:
 - Before/After比較表（主要指標）:
 
   | 指標 | Before | After | 備考 |

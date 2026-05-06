@@ -1,0 +1,10 @@
+name: ai-templates
+version: 0.1.0
+description: AIテンプレート関連の成果物とドキュメントを管理するリポジトリ
+includes: auto
+author: ai-templates maintainers
+license: MIT
+dependencies:
+  apm: []
+  mcp: []
+scripts: {}

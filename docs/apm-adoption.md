@@ -54,6 +54,19 @@ Phase 0 では、APMの実設定ファイルはまだ追加せず、導入可否
 | 外部依存/MCP | Phase 3の安全基準が完了するまで追加しません。 |
 | 変更履歴 | `docs/templates/change-log.md` に `APM/AgentConfig` または `Docs` として記録します。 |
 
+## Phase 3 実装結果
+- `docs/apm-security-review.md` に外部依存とMCP serverの安全レビュー基準を追加しました。
+- `docs/templates/safety-policy.md` にAPM外部依存・MCP追加時の確認観点を追加しました。
+- Phase 3では外部package、MCP server、CI設定は追加していません。
+
+## Phase 3 安全基準
+| 対象 | 追加前の必須確認 |
+|---|---|
+| 外部依存 | 出典、提供元、ライセンス、保守状況、version固定、lockfile差分を確認します。 |
+| MCP server | 権限、認証情報、通信先、送信データ、ログ出力、ロールバック手順を確認します。 |
+| PR記載 | 追加目的、利用範囲、権限、通信先、取り扱うデータ、検証コマンド、既知リスクを記載します。 |
+| Safety影響 | 個人情報・機密情報・外部通信・コマンド実行への影響を確認します。 |
+
 ## Phase 1以降のIssue下書き
 Phase 1以降の作業は、GitHub Issueとして登録できるよう `docs/issues/` に分割して管理します。
 

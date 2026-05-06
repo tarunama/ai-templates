@@ -18,7 +18,7 @@
 | AI変更の PR 作成時 | `docs/templates/ai-pr-template.md` |
 
 ## 評価結果の生成
-- 評価ケースの「判定 (Pass/Fail)」列を記入したあと、次のコマンドで PR に貼り付ける評価結果を生成します。
+- 評価ケすースの「判定 (Pass/Fail)」列を記入したあと、次のコマンドで PR に貼り付ける評価結果を生成します。
 
   ```bash
   python3 scripts/run-eval.py --eval-file docs/templates/eval-cases.md
@@ -42,6 +42,7 @@
 - Phase 0 調査: `docs/apm-adoption.md`
 - Phase 1 最小構成PoC: `apm.yml`
 - Phase 1以降のIssue下書き: `docs/issues/README.md`
+- Phase 3 安全レビュー基準: `docs/apm-security-review.md`
 
 ### APMの位置づけ
 - APMは既存のクイックスタートや `docs/templates/` の利用順を置き換えず、エージェント設定を再現しやすくする補助手段として利用します。
@@ -57,7 +58,7 @@
 ### APM関連ファイルの更新ルール
 - `apm.yml` を変更した場合は、APM CLIを利用できる環境で `apm install --dry-run` と `apm install` を確認してください。
 - `apm.lock.yaml` は `apm install` が安定して成功し、差分を確認できた時点でコミット対象にします。
-- 外部packageやMCP serverの追加は、Phase 3で安全基準を定義してから実施します。
+- 外部packageやMCP serverの追加は、`docs/apm-security-review.md` の安全レビュー基準を満たしてから実施します。
 - APM関連ファイルを追加・変更する場合は、`docs/templates/change-log.md` に変更内容を記録してください。
 
 ## Codexでの利用

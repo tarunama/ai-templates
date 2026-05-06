@@ -1,0 +1,43 @@
+name: APM
+
+on:
+  pull_request:
+    paths:
+      - "apm.yml"
+      - "apm.lock.yaml"
+      - "docs/apm-adoption.md"
+      - "docs/apm-security-review.md"
+      - ".github/workflows/apm.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "apm.yml"
+      - "apm.lock.yaml"
+      - "docs/apm-adoption.md"
+      - "docs/apm-security-review.md"
+      - ".github/workflows/apm.yml"
+  workflow_dispatch:
+
+jobs:
+  apm-dry-run:
+    name: APM dry run
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install APM CLI
+        continue-on-error: true
+        run: |
+          curl -sSL https://aka.ms/apm-unix | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Show APM version
+        continue-on-error: true
+        run: apm --version
+
+      - name: Run APM install dry run
+        continue-on-error: true
+        run: apm install --dry-run

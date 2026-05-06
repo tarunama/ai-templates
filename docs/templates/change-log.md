@@ -13,6 +13,7 @@
 | 2026-05-06 | Docs | APM導入 Phase 2 ドキュメント反映を実装 | APM利用手順と既存テンプレート運用の関係を明確化 | README, docs/apm-adoption.md, docs/templates/README.md, docs/issues/apm-phase-2-docs.md | Markdown構成確認済み | - | Codex |
 | 2026-05-06 | Safety | APM導入 Phase 3 安全レビュー基準を実装 | 外部依存とMCP server追加時の許可基準を明確化 | README, docs/apm-adoption.md, docs/apm-security-review.md, docs/templates/safety-policy.md, docs/issues/apm-phase-3-safety.md | Markdown構成確認済み | - | Codex |
 | 2026-05-06 | Eval | 評価ケースMarkdownをCIで確認するワークフローを追加 | PRとmain更新時に評価結果を自動生成する | .github/workflows/evaluation.yml, README | `python3 scripts/run-eval.py --eval-file docs/templates/eval-cases.md --allow-template` 実行済み | - | Codex |
+| 2026-05-06 | APM/AgentConfig | APM導入 Phase 4 CIワークフローを追加 | APM関連変更時にCLI導入とdry-runを確認する | .github/workflows/apm.yml, docs/templates/change-log.md | YAML構成確認済み | - | Codex |
 | YYYY-MM-DD | Prompt/Model/Eval/Safety/Docs/APM/AgentConfig |  |  |  |  |  |  |
 
 ## 種別ごとの記録

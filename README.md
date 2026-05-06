@@ -26,6 +26,12 @@
 
 - 未記入テンプレートの構造確認だけを行う場合は `--allow-template` を付けます。
 
+## CIでの評価
+- GitHub Actions の `Evaluation` ワークフローで、Pull Request と `main` への push 時に評価ケース Markdown を確認します。
+- 既定では `docs/templates/eval-cases.md` を `--allow-template` 付きで実行し、テンプレート未記入でも構造確認として扱います。
+- 手動実行時は `eval_file` 入力で評価対象 Markdown を指定できます。
+- 評価結果は GitHub Actions の Step Summary に出力されます。
+
 ## 運用メモ
 - Pull Request のタイトルと説明は日本語で記載してください（`.github/pull_request_template.md` を使用）。
 - AI変更時は `docs/templates/ai-pr-template.md` を利用してください。

@@ -3,7 +3,7 @@
 ## クイックスタート（30分）
 1. `docs/templates/prompt-spec.md` をコピーし、目的・入出力・制約を最小限で記入します。
 2. `docs/templates/model-decision-record.md` に候補モデル、選定理由、却下理由を記録します。
-3. `docs/templates/eval-cases.md` で代表ケースを作成し、初回評価を実施します。
+3. `docs/templates/eval-cases.md` で代表ケースを作成し、`python3 scripts/run-eval.py --eval-file docs/templates/eval-cases.md` で評価結果を生成します。
 4. `docs/templates/safety-policy.md` を確認し、リスクとガードレールを更新します。
 5. `docs/templates/ai-pr-template.md` を使って PR を作成します。
 
@@ -16,6 +16,15 @@
 | Safety / Policy 変更時 | `docs/templates/safety-policy.md`, `docs/templates/eval-cases.md` |
 | 運用手順変更時 | `docs/templates/operations-runbook.md` |
 | AI変更の PR 作成時 | `docs/templates/ai-pr-template.md` |
+
+## 評価結果の生成
+- 評価ケースの「判定 (Pass/Fail)」列を記入したあと、次のコマンドで PR に貼り付ける評価結果を生成します。
+
+  ```bash
+  python3 scripts/run-eval.py --eval-file docs/templates/eval-cases.md
+  ```
+
+- 未記入テンプレートの構造確認だけを行う場合は `--allow-template` を付けます。
 
 ## 運用メモ
 - Pull Request のタイトルと説明は日本語で記載してください（`.github/pull_request_template.md` を使用）。

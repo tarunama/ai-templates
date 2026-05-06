@@ -24,6 +24,7 @@
 - 変更前:
 - 変更後:
 - 想定影響:
+- 検証コマンド: `python3 scripts/run-eval.py --eval-file <評価ケースMarkdown>`
 
 ### Safety変更
 - 変更前:

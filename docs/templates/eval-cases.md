@@ -13,7 +13,7 @@
 ## 2. 評価実行情報
 - 評価データセットID/バージョン:
 - 実行日時（UTC）:
-- 実行コマンド or 実行手順ID:
+- 実行コマンド or 実行手順ID: `python3 scripts/run-eval.py --eval-file <評価ケースMarkdown>`
 - 乱数シード/温度設定（出力のランダム性を制御する推論パラメータ。例: seed=42, temperature=0.2）:
 
 ## 3. 評価指標

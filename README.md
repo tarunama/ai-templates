@@ -32,6 +32,12 @@
 - 変更時は必ず `docs/templates/change-log.md` を更新してください。
 - Issue テンプレートは `.github/ISSUE_TEMPLATE/` に配置しています。
 
+## APM導入計画
+- Phase 0 調査: `docs/apm-adoption.md`
+- Phase 1以降のIssue下書き: `docs/issues/README.md`
+- APM関連ファイルを追加・変更する場合は、既存テンプレートの利用手順を優先し、`docs/templates/change-log.md` に変更内容を記録してください。
+- 初期導入では外部packageやMCP serverを追加せず、最小構成から検証します。
+
 ## Codexでの利用
 - Codex はリポジトリ直下の `AGENTS.md` をプロジェクト指示ファイルとして参照します。
 - このリポジトリは Markdown テンプレート中心のため、変更時はリンク先・見出し・表記ゆれなどの軽量な静的確認を実施してください。

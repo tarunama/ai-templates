@@ -40,6 +40,20 @@ Phase 0 では、APMの実設定ファイルはまだ追加せず、導入可否
 | 外部依存なしの検証 | 一部未完了 | この環境ではPyPIへの接続がプロキシ制限で失敗したため、APM CLI実行は未完了です。 |
 | lockfile方針 | 完了 | `apm.lock.yaml` はCLI実行成功後に生成し、レビュー対象にします。 |
 
+## Phase 2 実装結果
+- READMEにAPMの位置づけ、初回セットアップ手順、関連ファイル更新ルールを追加しました。
+- `docs/templates/README.md` に、APM利用時も既存テンプレート利用順を優先する補足を追加しました。
+- Phase 2では外部package、MCP server、CI設定は追加していません。
+
+## Phase 2 運用ルール
+| 対象 | ルール |
+|---|---|
+| 既存テンプレート | `docs/templates/README.md` の利用順を優先します。 |
+| `apm.yml` | 変更時は `apm install --dry-run` と `apm install` の確認を行います。 |
+| `apm.lock.yaml` | 生成または更新された場合は差分を確認し、再現性のためにコミット対象にします。 |
+| 外部依存/MCP | Phase 3の安全基準が完了するまで追加しません。 |
+| 変更履歴 | `docs/templates/change-log.md` に `APM/AgentConfig` または `Docs` として記録します。 |
+
 ## Phase 1以降のIssue下書き
 Phase 1以降の作業は、GitHub Issueとして登録できるよう `docs/issues/` に分割して管理します。
 

@@ -1,0 +1,37 @@
+name: Evaluation
+
+on:
+  pull_request:
+    paths:
+      - "docs/templates/eval-cases.md"
+      - "scripts/run-eval.py"
+      - ".github/workflows/evaluation.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/templates/eval-cases.md"
+      - "scripts/run-eval.py"
+      - ".github/workflows/evaluation.yml"
+  workflow_dispatch:
+    inputs:
+      eval_file:
+        description: "評価対象のMarkdownファイル"
+        required: false
+        default: "docs/templates/eval-cases.md"
+
+jobs:
+  run-evaluation:
+    name: Run Markdown evaluation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run evaluation summary
+        env:
+          EVAL_FILE: ${{ github.event.inputs.eval_file || 'docs/templates/eval-cases.md' }}
+        run: |
+          python3 scripts/run-eval.py --eval-file "$EVAL_FILE" --allow-template | tee eval-summary.md
+          cat eval-summary.md >> "$GITHUB_STEP_SUMMARY"

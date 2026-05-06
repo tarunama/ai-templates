@@ -26,11 +26,19 @@ Phase 0 では、APMの実設定ファイルはまだ追加せず、導入可否
 4. APM関連ファイルを変更した場合は、`docs/templates/change-log.md` に `APM/AgentConfig` または `Docs` として記録します。
 5. CIへの組み込みは、ローカル検証が安定してから判断します。
 
-## Phase 1 への移行条件
-- APM CLI のインストール方法と実行コマンドが利用者向けに説明できる。
-- 最小 `apm.yml` の内容が既存運用を壊さない。
-- 外部依存を追加しない状態で `apm install` または同等の検証が成功する。
-- lockfile をコミットする場合の更新ルールが決まっている。
+## Phase 1 実装結果
+- 最小 `apm.yml` をリポジトリ直下に追加しました。
+- 外部APM packageとMCP serverは追加していません。
+- `apm_modules/` は生成物として `.gitignore` に追加しました。
+- `apm.lock.yaml` は、APM CLIで `apm install` が安定して成功した後に生成差分を確認してコミットします。
+
+## Phase 1 検証結果
+| 項目 | 結果 | 補足 |
+|---|---|---|
+| APM CLI導入手順 | 完了 | 公式手順は `curl -sSL https://aka.ms/apm-unix \| sh` または `pip install apm-cli` です。 |
+| 最小manifest | 完了 | `apm.yml` に空の `dependencies.apm` と `dependencies.mcp` を定義しました。 |
+| 外部依存なしの検証 | 一部未完了 | この環境ではPyPIへの接続がプロキシ制限で失敗したため、APM CLI実行は未完了です。 |
+| lockfile方針 | 完了 | `apm.lock.yaml` はCLI実行成功後に生成し、レビュー対象にします。 |
 
 ## Phase 1以降のIssue下書き
 Phase 1以降の作業は、GitHub Issueとして登録できるよう `docs/issues/` に分割して管理します。

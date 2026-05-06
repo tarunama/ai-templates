@@ -40,9 +40,12 @@
 
 ## APM導入計画
 - Phase 0 調査: `docs/apm-adoption.md`
+- Phase 1 最小構成PoC: `apm.yml`
 - Phase 1以降のIssue下書き: `docs/issues/README.md`
 - APM関連ファイルを追加・変更する場合は、既存テンプレートの利用手順を優先し、`docs/templates/change-log.md` に変更内容を記録してください。
 - 初期導入では外部packageやMCP serverを追加せず、最小構成から検証します。
+- APM CLIを利用できる環境では、初回確認として `apm install --dry-run` を実行してから `apm install` を実行してください。
+- `apm.lock.yaml` は `apm install` が安定して成功し、差分を確認できた時点でコミット対象にします。
 
 ## Codexでの利用
 - Codex はリポジトリ直下の `AGENTS.md` をプロジェクト指示ファイルとして参照します。

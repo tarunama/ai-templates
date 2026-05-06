@@ -18,13 +18,19 @@
 | AI変更の PR 作成時 | `docs/templates/ai-pr-template.md` |
 
 ## 評価結果の生成
-- 評価ケースの「判定 (Pass/Fail)」列を記入したあと、次のコマンドで PR に貼り付ける評価結果を生成します。
+- 評価ケすースの「判定 (Pass/Fail)」列を記入したあと、次のコマンドで PR に貼り付ける評価結果を生成します。
 
   ```bash
   python3 scripts/run-eval.py --eval-file docs/templates/eval-cases.md
   ```
 
 - 未記入テンプレートの構造確認だけを行う場合は `--allow-template` を付けます。
+
+## CIでの評価
+- GitHub Actions の `Evaluation` ワークフローで、Pull Request と `main` への push 時に評価ケース Markdown を確認します。
+- 既定では `docs/templates/eval-cases.md` を `--allow-template` 付きで実行し、テンプレート未記入でも構造確認として扱います。
+- 手動実行時は `eval_file` 入力で評価対象 Markdown を指定できます。
+- 評価結果は GitHub Actions の Step Summary に出力されます。
 
 ## 運用メモ
 - Pull Request のタイトルと説明は日本語で記載してください（`.github/pull_request_template.md` を使用）。

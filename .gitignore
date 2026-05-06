@@ -1,0 +1,2 @@
+# APM installs external packages here. Keep resolved dependencies out of Git.
+apm_modules/

@@ -67,6 +67,11 @@ Phase 0 では、APMの実設定ファイルはまだ追加せず、導入可否
 | PR記載 | 追加目的、利用範囲、権限、通信先、取り扱うデータ、検証コマンド、既知リスクを記載します。 |
 | Safety影響 | 個人情報・機密情報・外部通信・コマンド実行への影響を確認します。 |
 
+## Phase 4 lockfile方針
+- Phase 4開始時点では、`apm.lock.yaml` が存在しなくてもCI失敗にしません。
+- `apm install` が安定して `apm.lock.yaml` を生成できることを確認できたら、生成差分をレビューしてコミットします。
+- `apm.lock.yaml` コミット後は、`apm.yml` と `apm.lock.yaml` の不整合をCIで検知する方針へ切り替えます。
+
 ## Phase 1以降のIssue下書き
 Phase 1以降の作業は、GitHub Issueとして登録できるよう `docs/issues/` に分割して管理します。
 
